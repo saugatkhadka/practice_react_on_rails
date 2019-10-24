@@ -1,0 +1,17 @@
+h1 Appointments
+/ = react_component("Appointment", prerender: false)
+h3 Make a new appointment
+
+/ remote :true is for ajax
+= form_for @appointment, remote: true do |f|
+  = f.text_field :title
+  = f.text_field :appointment_time
+  = f.submit "Make an Appointment"
+
+h3 Appointment List
+#appointments
+  = render 'appointment'
+
+h2 React Calender
+
+
